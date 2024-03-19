@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SeleniumCSharProject",
+    "\\SeleniumCSharProject\\bin",
+    "\\SeleniumCSharProject\\obj",
+    "\\SeleniumCSharProject\\PageObjects",
+    "\\SeleniumCSharProject\\TestData",
+    "\\SeleniumCSharProject\\Tests"
+  ],
+  "SelectedNode": "\\SeleniumCSharProject\\Tests\\TS_010.cs",
+  "PreviewInSolutionExplorer": false
+}

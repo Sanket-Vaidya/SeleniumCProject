@@ -1,0 +1,31 @@
+[
+  {
+    "username": "Mohit",
+    "password": "sanket27",
+    "result": "Fail"
+  },
+
+  {
+    "username": "Ramesh",
+    "password": "Ramesh5",
+    "result": "Fail"
+  },
+
+  {
+    "username": "Mona",
+    "password": "Mona32",
+    "result": "Fail"
+  },
+
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "result": "Pass"
+  },
+
+  {
+    "username": "Chandan",
+    "password": "Chandan48",
+    "result": "Fail"
+  }
+]
