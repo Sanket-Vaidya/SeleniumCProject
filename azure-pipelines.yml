@@ -6,6 +6,7 @@
 trigger:
 - main
 
+
 pool:
   vmImage: 'windows-latest'
 
@@ -16,6 +17,7 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- bash: ls -R $(System.DefaultWorkingDirectory)
 
 - task: NuGetCommand@2
   inputs:
