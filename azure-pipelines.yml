@@ -35,4 +35,8 @@ steps:
     configuration: '$(buildConfiguration)'
 - bash: ls -R D:\\a\\1\\s
 - bash: dir '$(System.DefaultWorkingDirectory)'
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
