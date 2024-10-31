@@ -34,3 +34,4 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 - bash: dir $(System.DefaultWorkingDirectory)
+- bash: ls -R D:\\a\\1\\s
