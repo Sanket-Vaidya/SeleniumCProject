@@ -40,3 +40,8 @@ steps:
     PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: VSTest@3
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
