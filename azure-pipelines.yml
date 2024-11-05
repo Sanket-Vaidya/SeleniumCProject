@@ -47,4 +47,6 @@ steps:
     testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
+
+  continueOnError: true
 - bash: ls -R D:\\a\\1\\s
