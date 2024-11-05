@@ -33,15 +33,18 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- bash: ls -R D:\\a\\1\\s
+
 - bash: dir '$(System.DefaultWorkingDirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
+#     ArtifactName: 'drop'
+#     publishLocation: 'Container'
 - task: VSTest@3
   inputs:
     testSelector: 'testAssemblies'
     testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
     searchFolder: '$(System.DefaultWorkingDirectory)'
+
+- bash: ls -R D:\\a\\1\\s
