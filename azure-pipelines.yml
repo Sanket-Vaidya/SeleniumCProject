@@ -14,39 +14,83 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+stages:
+- stage: First 
+  jobs: 
+  - job: job1
 
-steps:
-- task: NuGetToolInstaller@1
-
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- bash: dir '$(System.DefaultWorkingDirectory)'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
-#     ArtifactName: 'drop'
-#     publishLocation: 'Container'
-- task: VSTest@3
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+    steps:
+    - task: NuGetToolInstaller@1
 
 
-  continueOnError: true
-- bash: ls -R D:\\a\\1\\s
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
+
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+
+    - task: VSTest@2
+      inputs:
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+
+    - bash: dir '$(System.DefaultWorkingDirectory)'
+
+    # - task: PublishBuildArtifacts@1
+    #   inputs:
+    #     PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
+    #     ArtifactName: 'drop'
+    #     publishLocation: 'Container'
+    - task: VSTest@3
+      inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
+        searchFolder: '$(System.DefaultWorkingDirectory)'
+
+
+      continueOnError: true
+    - bash: ls -R D:\\a\\1\\s
+
+  - job: job2
+
+    steps:
+    - task: NuGetToolInstaller@1
+
+
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
+
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+
+    - task: VSTest@2
+      inputs:
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+
+    - bash: dir '$(System.DefaultWorkingDirectory)'
+
+    # - task: PublishBuildArtifacts@1
+    #   inputs:
+    #     PathtoPublish: '$(System.DefaultWorkingDirectory)\SeleniumCSharProject'
+    #     ArtifactName: 'drop'
+    #     publishLocation: 'Container'
+    - task: VSTest@3
+      inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: '**\bin\**\*SeleniumCSharProject.dll'
+        searchFolder: '$(System.DefaultWorkingDirectory)'
+
+
+      continueOnError: true
+    - bash: ls -R D:\\a\\1\\s
+    
+  
