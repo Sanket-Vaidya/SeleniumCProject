@@ -92,5 +92,10 @@ stages:
 
       continueOnError: true
     - bash: ls -R D:\\a\\1\\s
+
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'NUnit'
+        testResultsFiles: '**/*.html'
     
   
